@@ -3,6 +3,13 @@
 API REST desenvolvida em Java com Spring Boot para gerenciamento de autoescola, contemplando o cadastro de alunos e instrutores, controle de usuários e perfis de acesso com Spring Security e JWT, além de regras de negócio para agendamento e cancelamento de instruções práticas.
 
 ---
+## Integrantes
+
+Denise Senise RM 556006
+Larissa Rodrigues Lapa RM 554517
+Mateus Leme RM 557803
+David Gabriel Gomes Fernandes RM 556020
+Vinicius Augusto Neves Prestes RM 559097
 
 ## Tecnologias Utilizadas
 
