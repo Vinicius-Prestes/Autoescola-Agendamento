@@ -19,7 +19,7 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de autoescola, 
 
 ## Configuração do Banco de Dados
 
-As configurações de conexão com o banco de dados Oracle estão definidas no arquivo `src/main/resources/application.properties`:
+Ajustar conexão com o banco de dados Oracle estão definidas no arquivo `src/main/resources/application.properties`:
 
 - As tabelas e dados iniciais são criados automaticamente pelo Flyway na inicialização da aplicação (`db/migration`).
 - O sistema já inicia com um usuário administrador padrão:
