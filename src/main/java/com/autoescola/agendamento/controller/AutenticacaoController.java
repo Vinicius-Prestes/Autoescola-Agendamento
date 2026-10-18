@@ -4,6 +4,10 @@ import com.autoescola.agendamento.domain.usuario.DadosAutenticacao;
 import com.autoescola.agendamento.domain.usuario.Usuario;
 import com.autoescola.agendamento.infra.security.DadosTokenJWT;
 import com.autoescola.agendamento.infra.security.TokenService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("login")
+@Tag(name = "Autenticação", description = "Autenticação e geração de token JWT")
 public class AutenticacaoController {
 
     @Autowired
@@ -25,7 +30,13 @@ public class AutenticacaoController {
     private TokenService tokenService;
 
     @PostMapping
+    @Operation(summary = "Efetuar login", description = "Autentica o usuário no sistema e retorna o token JWT para ser utilizado no cabeçalho Authorization.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Autenticado com sucesso"),
+            @ApiResponse(responseCode = "401", description = "Credenciais inválidas")
+    })
     public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
+
         var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var authentication = manager.authenticate(authenticationToken);
 

@@ -20,8 +20,9 @@ public class SpringDocConfigurations {
                                         .scheme("bearer")
                                         .bearerFormat("JWT")))
                 .info(new Info()
-                        .title("Autoescola Agendamento")
-                        .description("API Rest da aplicação de agendamento de autoescola")
-                        .version("v1"));
+                        .title("Autoescola - API de Agendamento")
+                        .description("API REST para gerenciamento de autoescola, contemplando CRUD de instrutores, alunos e usuários, autenticação JWT, integração com WebService externo (ViaCEP) e regras de negócio para agendamento e cancelamento de instruções práticas.")
+                        .version("v1.0"));
+
     }
 }
